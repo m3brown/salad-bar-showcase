@@ -11,5 +11,6 @@ def index(request):
 
 def detail(request, id):
 	ingredient = get_object_or_404(Ingredient, pk=id)
-	return render(request, 'healthy_salad_chooser/detail.html', {'ingredient': ingredient})
+	price = '%.2f' % (float(ingredient.weight_in_oz) * (7.99/16.0))
+	return render(request, 'healthy_salad_chooser/detail.html', {'ingredient': ingredient, 'price': price})
 	
