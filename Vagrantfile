@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "web" do |web|
     web.vm.hostname = "web01.excella"
-    config.vm.network "forwarded_port", guest: 8000, host: 8080
+    config.vm.network "forwarded_port", guest: 80, host: 8080
   end
 
   if Vagrant.has_plugin?("vagrant-cachier")
