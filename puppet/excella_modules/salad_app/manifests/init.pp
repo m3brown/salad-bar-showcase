@@ -24,11 +24,39 @@ class salad_app {
     require => Exec['install python packages'],
   }
 
-  class { 'nginx': }
+  file { "/var/static":
+    ensure => directory,
+    owner => 'vagrant',
+    group => 'vagrant',
+  }
+
+  exec { "collectstatic":
+    command => "/www/manage.py collectstatic --noinput",
+    user => vagrant,
+    require => [File['/var/static'],
+                Exec['install python packages']],
+  }
+
+  class { 'nginx':
+    require => File['/var/static'],
+  }
+
+  nginx::resource::location { "saladbar-static":
+    ensure => present,
+    vhost => 'saladbar-host',
+    location => '/static',
+    www_root => '/var/',
+  }
 
   nginx::resource::vhost { 'saladbar-host':
     ensure => present,
     proxy  => 'http://127.0.0.1:8000',
   } 
+
+  file { "/etc/nginx/conf.d/default.conf":
+    ensure => absent,
+    require => Package['nginx'],
+    notify => Service['nginx'],
+  }
 
 }
