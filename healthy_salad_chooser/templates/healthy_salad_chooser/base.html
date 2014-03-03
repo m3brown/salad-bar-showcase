@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+ 
+<title>{% block title %}Site Title{% endblock %}</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+{% block css_include %}{% endblock %}
+
+{% block js_include %}{% endblock %} 
+ 
+</head>
+<body>
+
+<h1>---------- Top Header (put menu bar here!) ----------</h1>
+ 
+<div id="content">
+  {% block content %}{% endblock %}
+</div>
+
+<span>--- Copyright 2014 - Excella Consulting (put footer text here!) ---</span>
+ 
+</body>
+</html>

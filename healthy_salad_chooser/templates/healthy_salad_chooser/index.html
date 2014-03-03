@@ -1,9 +1,34 @@
-{% if ingredient_list %}
-	<ul>
-	{% for ingredient in ingredient_list %}
-		<li><a href="/saladbar/{{ ingredient.id }}/">{{ ingredient.name }}</a></li>
-	{% endfor %}
-	</ul>
-{% else %}
-	<p>No Ingredients, please add some in the admin console!</p>
-{% endif %}
+{% extends "healthy_salad_chooser/base.html" %}
+ 
+{% block title %}Salad Selector{% endblock %}
+
+{% block css_include %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+{% endblock %}
+
+{% block js_include %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/toppings.js"></script>
+{% endblock %}
+
+{% block content %} 
+  <h1>Pick your toppings!</h1>
+
+  <div class="toppingSelector" >
+  <div class="toppingsList" id="toppingsChoices">
+  {% if ingredient_list %}
+     {% for ingredient in ingredient_list %}
+         {% comment %}<div class="topping"><a href="/saladbar/{{ ingredient.id }}/">{{ ingredient.name }}</a></div> {% endcomment %}
+         <div class="topping">{{ ingredient.name }}</div>
+     {% endfor %}
+  {% else %}
+     <p>No Ingredients, please add some in the admin console!</p>
+  {% endif %}
+  </div>
+ 
+  <div class="toppingsList" id="toppingsSelected"> </div>
+  </div>
+
+  <h3>Total toppings selected: <span id="counter"></span></h3> 
+{% endblock %}

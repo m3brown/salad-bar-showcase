@@ -1,0 +1,32 @@
+#content {
+  margin: 50px 50px;
+}
+
+.topping {
+  width: 132px;
+  background-color: white;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  margin: 4px;
+  text-align: center;
+}
+
+.toppingsList {
+  display: inline-block;
+  height: 200px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  width: 140px;
+  padding: 7px 4px;
+  vertical-align: top;
+}
+
+#toppingsChoices {
+  background-color: #505050;
+}
+
+#toppingsSelected {
+  background-color: #a0a0a0;
+}
