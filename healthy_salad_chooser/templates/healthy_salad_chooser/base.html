@@ -5,6 +5,7 @@
 <title>{% block title %}Site Title{% endblock %}</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 
+<link rel="stylesheet" type="text/css" href="/static/css/nav.css">
 {% block css_include %}{% endblock %}
 
 {% block js_include %}{% endblock %} 
@@ -12,13 +13,41 @@
 </head>
 <body>
 
-<h1>---------- Top Header (put menu bar here!) ----------</h1>
- 
-<div id="content">
-  {% block content %}{% endblock %}
-</div>
+  <div id="container">
 
-<span>--- Copyright 2014 - Excella Consulting (put footer text here!) ---</span>
+  <div id="spacer"></div>
+
+  <div id="header">
+    <nav>
+      <div class="inner">
+      <ul>
+        <li {% if is_front %}class="active" {% endif %}>
+            <a href="/">Home</a>
+        </li>
+        <li {% if is_about %}class="active"{% endif %}>
+            <a href="/">About</a>
+        </li>
+        <li><a href="#">Tools</a>
+        </li>
+      </ul>
+
+      <div class="search">
+        <form method="get" action="#" id="search-form">
+          <label for="search">Search salad app</label>
+          <input type="text" id="search" name="term" tabindex="3">
+          <input type="button" id="search-submit-btn" value="Search" tabindex="4">
+        </form>
+      </div>
+      </div>
+    </nav>
+  </div>
+
  
+  <div id="content">
+    {% block content %}{% endblock %}
+  </div>
+
+  {% include "healthy_salad_chooser/footer.html" %}
+  </div>
 </body>
 </html>

@@ -1,3 +1,12 @@
+body {
+  background-color: #70777F;
+  margin: 0 30px 30px 30px;
+}
+
+#container {
+  background-color: #fff;
+}
+
 #content {
   margin: 50px 50px;
 }
@@ -29,4 +38,28 @@
 
 #toppingsSelected {
   background-color: #a0a0a0;
+}
+
+footer {
+  margin: auto;
+  text-align: right;
+  padding: 15px 10px;
+  background-color: #EAF3FF;
+  border-top: solid 1px #30537F;
+}
+footer a {
+  text-decoration: none;
+}
+footer p {
+  font-size: 12px;
+  line-height: 20px;
+  color: #000;
+  display: inline;
+  margin-right: 5px;
+}
+footer ul, footer li {
+  list-style: none;
+  display: inline;
+  margin: 0 0 0 2px;
+  padding: 0;
 }
