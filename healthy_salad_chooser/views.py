@@ -9,6 +9,10 @@ def index(request):
 	context = {'ingredient_list': ingredient_list}
 	return render(request, 'healthy_salad_chooser/index.html', context)
 
+def about(request):
+	context = {}
+	return render(request, 'healthy_salad_chooser/about.html', context)
+
 def detail(request, id):
 	ingredient = get_object_or_404(Ingredient, pk=id)
 	price = '%.2f' % (float(ingredient.weight_in_oz) * (7.99/16.0))
