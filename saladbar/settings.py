@@ -89,3 +89,8 @@ STATICFILES_FINDERS = (
 STATIC_URL = '/static/'
 
 STATIC_ROOT = '/var/static/'
+
+# Fixtures
+FIXTURE_DIRS = (
+    'saladbar/fixtures/',
+)
