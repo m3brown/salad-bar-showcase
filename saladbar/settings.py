@@ -60,5 +60,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Fixtures
+FIXTURE_DIRS = (
+    'saladbar/fixtures/',
+)
+
 # import local settings (db, static files, additional modules, etc)
 from saladbar.local_settings import *

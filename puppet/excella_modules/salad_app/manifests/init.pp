@@ -19,6 +19,11 @@ class salad_app {
     before => Class["jenkins::package"],
   }
 
+  exec { "django syncdb":
+    command => "/www/manage.py syncdb --noinput",
+    require => Exec['install python packages'],
+  }
+
   supervisor::program { 'saladbar':
     ensure => present,
     enable => true,
@@ -26,7 +31,7 @@ class salad_app {
     directory => '/www',
     user => 'vagrant',
     group => 'vagrant',
-    require => Exec['install python packages'],
+    require => Exec['django syncdb'],
   }
 
   file { "/var/static":
