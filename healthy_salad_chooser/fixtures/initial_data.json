@@ -1,0 +1,26 @@
+[
+{
+  "pk": 1, 
+  "model": "healthy_salad_chooser.ingredient", 
+  "fields": {
+    "name": "Tomato", 
+    "weight_in_oz": "2", 
+    "calories": 35, 
+    "nutrient_density": "1", 
+    "serving_size": 2, 
+    "serving_unit": "oz"
+  }
+},
+{
+  "pk": 2, 
+  "model": "healthy_salad_chooser.ingredient", 
+  "fields": {
+    "name": "cheese", 
+    "weight_in_oz": "5", 
+    "calories": 200, 
+    "nutrient_density": "2", 
+    "serving_size": 1, 
+    "serving_unit": "scoop"
+  }
+}
+]
