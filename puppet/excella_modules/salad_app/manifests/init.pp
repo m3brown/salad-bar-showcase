@@ -104,5 +104,11 @@ class salad_app {
     "violations" : ;
     "cobertura" : ;
     "dashboard-view" : ;
+    "startup-trigger-plugin" : ;
+  }
+
+  jenkins_config::load { "saladbar":
+    import_source => 'modules/salad_app/saladbar_config.xml',
+    jenkins_url => 'http://127.0.0.1:8001/jenkins',
   }
 }
