@@ -4,5 +4,6 @@ from healthy_salad_chooser import views
 
 urlpatterns = patterns('',
 	url(r'^$', views.index, name='index'),
+	url(r'^about/$', views.about, name='index'),
 	url(r'^(?P<id>\d+)/$', views.detail, name='detail'),
 )

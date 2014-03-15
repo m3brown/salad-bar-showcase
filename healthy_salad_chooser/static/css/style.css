@@ -1,0 +1,81 @@
+body {
+  background-color: #70777F;
+  margin: 0 30px 30px 30px;
+}
+
+#container {
+  background-color: #fff;
+  border: solid 1px #30537F;
+  border-top: 0;
+}
+
+#content {
+  margin: 50px 50px;
+}
+
+.topping {
+  width: 132px;
+  background-color: white;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  margin: 4px;
+  text-align: center;
+}
+
+.toppingsList {
+  display: inline-block;
+  height: 200px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  width: 140px;
+  padding: 4px 4px;
+  vertical-align: top;
+}
+
+#toppingsChoices {
+  background-color: #505050;
+}
+
+#toppingsSelected {
+  background-color: #a0a0a0;
+}
+
+.toppingSelector {
+  display: inline-block;
+}
+
+.ingredientInfo {
+  display: inline-block;
+  border: solid 1px #000;
+  margin-left: 100px;
+  height: 186px;
+  width: 250px;
+  padding: 10px;
+  vertical-align: top;
+}
+
+footer {
+  margin: auto;
+  text-align: right;
+  padding: 15px 10px;
+  background-color: #EAF3FF;
+  border-top: solid 1px #30537F;
+}
+footer a {
+  text-decoration: none;
+}
+footer p {
+  font-size: 12px;
+  line-height: 20px;
+  color: #000;
+  display: inline;
+  margin-right: 5px;
+}
+footer ul, footer li {
+  list-style: none;
+  display: inline;
+  margin: 0 0 0 2px;
+  padding: 0;
+}

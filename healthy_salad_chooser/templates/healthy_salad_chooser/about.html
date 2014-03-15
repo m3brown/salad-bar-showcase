@@ -1,0 +1,53 @@
+{% extends "healthy_salad_chooser/base.html" %}
+ 
+{% block title %}About{% endblock %}
+
+{% block css_include %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/github.css">
+{% endblock %}
+
+{% block content %} 
+<div id="github-style">
+<h1>salad-bar-showcase</h1>
+
+<p>A simple website built using a full suite of open source technologies</p>
+
+<h1>Setup:</h1>
+
+<ul>
+<li>Download vagrant and virtualbox</li>
+<li>Clone this repo</li>
+<li>From the root of this repo, create and provision the virtual machine <code>vagrant up</code>
+</li>
+<li>The website will be available from a browser on the host computer at <code>http://127.0.0.1:8080/</code>
+</li>
+</ul>
+
+<h2>Notable tools:</h2>
+
+<ul>
+<li>
+<a href="http://puppetlabs.com/">Puppet</a> - provision applications and configurations</li>
+<li>
+<a href="http://www.djangoproject.com/">Django</a> - Python application framwork</li>
+</ul>
+
+<h2>Other contributing tools:</h2>
+
+<ul>
+<li>
+<a href="http://www.vagrantup.com/">Vagrant</a> - create virtualbox servers</li>
+<li>
+<a href="http://gunicorn.org/">Gunicorn</a> - WSGI application server</li>
+<li>
+<a href="http://wiki.nginx.org/Main">Nginx</a> - HTTP server</li>
+<li>
+<a href="http://supervisord.org/">Supervisor</a> - process monitoring</li>
+<li>
+<a href="http://jquery.com/">JQuery</a> - Javascript library</li>
+<li>
+<a href="https://github.com/rodjek/librarian-puppet">Librarian-puppet</a> - puppet module manager</li>
+</ul>
+</div>
+{% endblock %}

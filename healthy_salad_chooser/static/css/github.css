@@ -1,0 +1,81 @@
+// Referenced from https://gist.github.com/andyferra/2554919
+
+// for some reason the first item on this page is not loaded
+body { }
+
+#github-style {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+ 
+#github-style > *:first-child {
+  margin-top: 0 !important; }
+#github-style > *:last-child {
+  margin-bottom: 0 !important; }
+ 
+#github-style a {
+  color: #4183C4; }
+ 
+#github-style h1, #github-style h2, #github-style h3, #github-style h4, #github-style h5, #github-style h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+ 
+#github-style h1 tt, #github-style h1 code {
+  font-size: inherit; }
+ 
+#github-style h2 tt, #github-style h2 code {
+  font-size: inherit; }
+ 
+#github-style h3 tt, #github-style h3 code {
+  font-size: inherit; }
+ 
+#github-style h4 tt, #github-style h4 code {
+  font-size: inherit; }
+ 
+#github-style h5 tt, #github-style h5 code {
+  font-size: inherit; }
+ 
+#github-style h6 tt, #github-style h6 code {
+  font-size: inherit; }
+ 
+#github-style h1 {
+  font-size: 28px;
+  color: black; }
+ 
+#github-style h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+ 
+#github-style h3 {
+  font-size: 18px; }
+ 
+#github-style h4 {
+  font-size: 16px; }
+ 
+#github-style h5 {
+  font-size: 14px; }
+ 
+#github-style h6 {
+  color: #777777;
+  font-size: 14px; }
+ 
+#github-style p, #github-style blockquote, #github-style ul, #github-style ol, #github-style dl, #github-style li, #github-style table, #github-style pre {
+  margin: 15px 0; }
+
+#github-style code, #github-style tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+}
