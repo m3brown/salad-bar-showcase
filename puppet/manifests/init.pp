@@ -1,7 +1,10 @@
 hiera_include('classes')
 
 class { 'yum':
-  extrarepo => [ 'epel' ],
+  extrarepo => [
+    'epel',
+    'repoforgeextras',
+  ],
 }
 
 # configure repo before installing any packages

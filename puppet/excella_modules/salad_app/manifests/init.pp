@@ -4,6 +4,10 @@ class salad_app {
     ensure => installed,
   }
 
+  package { "git": 
+    ensure => latest,
+  }
+
   package { "python-pip":
     ensure => installed,
     require => Package['python'],
@@ -12,6 +16,7 @@ class salad_app {
   exec { "install python packages":
     command => "/usr/bin/pip install -r /www/requirements.txt",
     require => Package['python-pip'],
+    before => Class["jenkins::package"],
   }
 
   supervisor::program { 'saladbar':
@@ -41,6 +46,30 @@ class salad_app {
     require => File['/var/static'],
   }
 
+  nginx::resource::upstream { 'saladbar':
+    members => [
+      'localhost:8000',
+    ],
+  }
+
+  nginx::resource::upstream { 'jenkins':
+    members => [
+      'localhost:8001',
+    ],
+  }
+
+  nginx::resource::vhost { 'saladbar-host':
+    ensure => present,
+    use_default_location => false,
+    proxy_set_header => [ 'X-Forwarded-For $proxy_add_x_forwarded_for', 'Host $http_host' ],
+  } 
+
+  nginx::resource::location { "/":
+    ensure => present,
+    vhost => 'saladbar-host',
+    proxy  => 'http://saladbar',
+  }
+
   nginx::resource::location { "saladbar-static":
     ensure => present,
     vhost => 'saladbar-host',
@@ -48,10 +77,11 @@ class salad_app {
     www_root => '/var/',
   }
 
-  nginx::resource::vhost { 'saladbar-host':
+  nginx::resource::location { "/jenkins":
     ensure => present,
-    proxy  => 'http://127.0.0.1:8000',
-  } 
+    vhost => 'saladbar-host',
+    proxy  => 'http://jenkins',
+  }
 
   file { "/etc/nginx/conf.d/default.conf":
     ensure => absent,
@@ -59,4 +89,20 @@ class salad_app {
     notify => Service['nginx'],
   }
 
+  class { 'jenkins':
+    config_hash => {
+      'JENKINS_PORT' => { 'value' => '8001' },
+      'JENKINS_ARGS' => { 'value' => '--prefix="/jenkins"' }
+    }
+  }
+
+  jenkins::plugin {
+    "git-client" : ;
+    "multiple-scms" : ;
+    "scm-api": ;
+    "git" : ;
+    "violations" : ;
+    "cobertura" : ;
+    "dashboard-view" : ;
+  }
 }
