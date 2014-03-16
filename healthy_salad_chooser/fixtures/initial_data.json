@@ -1,26 +1,86 @@
 [
 {
-  "pk": 1, 
-  "model": "healthy_salad_chooser.ingredient", 
-  "fields": {
-    "name": "Tomato", 
-    "weight_in_oz": "2", 
-    "calories": 35, 
-    "nutrient_density": "1", 
-    "serving_size": 2, 
-    "serving_unit": "oz"
-  }
+   "pk": 1, 
+   "model": "healthy_salad_chooser.ingredient", 
+   "fields": {
+      "name": "Tomato", 
+      "weight_in_oz": "2", 
+      "calories": 35, 
+      "nutrient_density": "1", 
+      "serving_size": 2, 
+      "serving_unit": "oz"
+   }
 },
 {
-  "pk": 2, 
-  "model": "healthy_salad_chooser.ingredient", 
-  "fields": {
-    "name": "cheese", 
-    "weight_in_oz": "5", 
-    "calories": 200, 
-    "nutrient_density": "2", 
-    "serving_size": 1, 
-    "serving_unit": "scoop"
-  }
+   "pk": 2, 
+   "model": "healthy_salad_chooser.ingredient", 
+   "fields": {
+      "name": "Cheese", 
+      "weight_in_oz": "5", 
+      "calories": 200, 
+      "nutrient_density": "2", 
+      "serving_size": 1, 
+      "serving_unit": "scoop"
+   }
+},
+{
+   "pk": 3, 
+   "model": "healthy_salad_chooser.ingredient", 
+   "fields": {
+      "name": "Carrots", 
+      "weight_in_oz": "3", 
+      "calories": 35, 
+      "nutrient_density": "1", 
+      "serving_size": 1, 
+      "serving_unit": "cups"
+   }
+},
+{
+   "pk": 4, 
+   "model": "healthy_salad_chooser.ingredient", 
+   "fields": {
+      "name": "Broccoli", 
+      "weight_in_oz": "3.1", 
+      "calories": 30, 
+      "nutrient_density": "1", 
+      "serving_size": 1, 
+      "serving_unit": "cups"
+   }
+},
+{
+   "pk": 5, 
+   "model": "healthy_salad_chooser.ingredient", 
+   "fields": {
+      "name": "Bacon Bits", 
+      "weight_in_oz": "0.25", 
+      "calories": 25, 
+      "nutrient_density": "1", 
+      "serving_size": 1, 
+      "serving_unit": "serving"
+   }
+},
+{
+   "pk": 6, 
+   "model": "healthy_salad_chooser.ingredient", 
+   "fields": {
+      "name": "Egg", 
+      "weight_in_oz": "1.76", 
+      "calories": 72, 
+      "nutrient_density": "1", 
+      "serving_size": 1, 
+      "serving_unit": "large"
+   }
+},
+{
+   "pk": 7, 
+   "model": "healthy_salad_chooser.ingredient", 
+   "fields": {
+      "name": "Ranch Dressing", 
+      "weight_in_oz": "1.02", 
+      "calories": 149, 
+      "nutrient_density": "1", 
+      "serving_size": 2, 
+      "serving_unit": "tbsp"
+   }
 }
 ]

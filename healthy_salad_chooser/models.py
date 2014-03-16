@@ -8,3 +8,6 @@ class Ingredient(models.Model):
 	calories = models.IntegerField(default=0)
 	weight_in_oz = models.DecimalField(max_digits=10, decimal_places=2)
 	nutrient_density = models.DecimalField(max_digits=10, decimal_places=2)
+
+	def __unicode__(self):
+		return self.name

@@ -10,6 +10,20 @@
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/toppings.js"></script>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  // Place the ingredient list into a javascript object so we can 
+  // use it later
+  var ingredient_list = {};
+  {% if ingredient_list %}
+    {% for ingredient in ingredient_list %}
+      ingredient_list["{{ ingredient.id }}"] = {"name": "{{ ingredient.name }}", "calories": "{{ ingredient.calories }}", "weight": "{{ ingredient.weight_in_oz}}"};
+    {% endfor %}
+    console.log(ingredient_list);
+  {% endif %}
+</script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/charts.js"></script>
 {% endblock %}
 
 {% block content %} 
@@ -31,6 +45,11 @@
   </div>
 
   <div class="ingredientInfo"> </div>
+
+  <div id="charts">
+    <div id="cost_chart" style="display: inline-block; margin-right: 20px"></div>
+    <div id="calorie_chart" style="display: inline-block;"></div>
+  </div>
 
   <h3>Total toppings selected: <span id="counter"></span></h3> 
 {% endblock %}
