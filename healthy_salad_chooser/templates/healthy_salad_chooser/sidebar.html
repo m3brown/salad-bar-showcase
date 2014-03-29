@@ -1,20 +1,12 @@
+{% load active %}
+{% url 'index' as index %}
+{% url 'about' as about %}
+
 <div class="col-lg-2 sidebar">
   <ul class="nav nav-sidebar">
-    <li class="active"><a href="/">Overview</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="#">Tools</a></li>
-    <li><a href="#">Export</a></li>
-  </ul>
-  <ul class="nav nav-sidebar">
-    <li><a href="">Nav item</a></li>
-    <li><a href="">Nav item again</a></li>
-    <li><a href="">One more nav</a></li>
-    <li><a href="">Another nav item</a></li>
-    <li><a href="">More navigation</a></li>
-  </ul>
-  <ul class="nav nav-sidebar">
-    <li><a href="">Nav item again</a></li>
-    <li><a href="">One more nav</a></li>
-    <li><a href="">Another nav item</a></li>
+    <li class="{% active request index %}"><a href="{{ index }}">Overview</a></li>
+    <li class="{% active request about %}"><a href="{{ about }}">About</a></li>
+    <li><a href="/jenkins/" target="_blank">Jenkins</a></li>
+    </li>
   </ul>
 </div>
